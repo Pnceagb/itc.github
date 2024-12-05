@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <style>
+        * {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1e23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1e23;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    list-style: none;
+    width: 220px;
+    transition: .3s ease;
+}
+
+.card::before {
+    content: "";
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.card-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    background-size: 350px;
+    background-position: center;
+    transform-origin: bottom;
+    transform: scale(1) translate(0);
+    transition: .3s ease;
+}
+
+.card:hover .card-background {
+    transform: scale(1.15) translateZ(0);
+    background-size: 250px;
+}
+
+.card-container:hover .card:not(:hover) {
+    transform: scale(.9);
+}
+
+.card-container:hover > .card:not(:hover) .card-background,
+.card-container:hover > .card:not(:hover) .card-category {
+    filter: blur(20px);
+}
+
+.content {
+    top: 50%;
+    left: 0;
+    padding: 25px;
+    position: absolute;
+}
+
+.card-category {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.card-heading {
+    color: black;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+}
+
+.logo-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: beige;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;  
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .menu ul {
+        padding: 0;
+    }
+
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu a {
+        font-size: 1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <a href="index.html" class="logo-link">PNCEAGB</a>
+
+    <section class="hero-section">
+        <div class="card-container">
+            <a href="calculator.html" class="card">
+                <div class="card-background" style="background-color: beige;"></div>
+                <div class="content">
+                    <div class="card-category">Assignment #1</div>
+                    <h3 class="card-heading">Income Tax Calculator</h3>
+                </div>
+            </a>
+
+            <a href="conversion.html" class="card">
+                <div class="card-background" style="background-color: gray;"></div>
+                <div class="content">
+                    <div class="card-category">Assignment #2</div>
+                    <h3 class="card-heading">Conversion</h3>
+                </div>
+            </a>
+
+            <a href="looping.html" class="card">
+                <div class="card-background" style="background-color: beige;"></div>
+                <div class="content">
+                    <div class="card-category">Assignment #3</div>
+                    <h3 class="card-heading">Looping</h3>
+                </div>
+            </a>
+
+            <a href="payroll.html" class="card">
+                <div class="card-background" style="background-color: gray;"></div>
+                <div class="content">
+                    <div class="card-category">Assignment #4</div>
+                    <h3 class="card-heading">Simple Payroll</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

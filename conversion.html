@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion Tools</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1a1e23; 
+      color: #fff; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      flex-direction: column;
+      position: relative;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      color: beige;
+      font-size: 24px; 
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: color 0.3s ease; 
+    }
+
+    .logo-link:hover {
+      color: grey;
+    }
+
+    .conversion-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 30px;
+      flex-wrap: wrap; 
+    }
+
+    .conversion-section {
+      width: 48%; 
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 20px; 
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 14px;
+      width: 100%;
+      max-width: 280px; 
+      margin: 10px 0; 
+      border: 2px solid beige;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+
+    
+    button {
+      padding: 8px 20px;
+      font-size: 14px;
+      background-color: beige;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px 0; 
+    }
+
+    button:hover {
+      background-color: grey;
+    }
+
+    .conversion-section + .conversion-section {
+      margin-top: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px; 
+      color: #fff;
+    }
+
+    .conversion-section:nth-child(2) {
+      margin-top: -10px; 
+    }
+
+    .conversion-section:nth-child(4) {
+      margin-top: -10px; 
+    }
+
+    @media (max-width: 768px) {
+      .logo-link {
+        font-size: 20px;
+      }
+
+      .conversion-container {
+        flex-direction: column;
+      }
+
+      .conversion-section {
+        width: 100%; 
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      input {
+        max-width: 100%; 
+      }
+
+      button {
+        font-size: 12px;
+        padding: 6px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-link {
+        font-size: 18px;
+      }
+
+      h1 {
+        font-size: 16px;
+      }
+
+      input {
+        max-width: 100%; 
+      }
+
+      button {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="logo-link">PNCEAGB</a>
+
+
+<div class="conversion-container">
+  <div class="conversion-section">
+    <h1>Fahrenheit to Celsius</h1>
+    <label for="ftemp">Fahrenheit:</label>
+    <input id="ftemp" type="number" oninput="updateCelsius()">
+    <label for="sum">Celsius:</label>
+    <input id="sum" type="number" readonly>
+    <button onclick="clearvalues()">Clear Values</button>
+  </div>
+
+  <div class="conversion-section">
+    <h1>Celsius to Fahrenheit</h1>
+    <label for="ftemp1">Celsius:</label>
+    <input id="ftemp1" type="number" oninput="updateFahrenheit1()">
+    <label for="sum1">Fahrenheit:</label>
+    <input id="sum1" type="number" readonly>
+    <button onclick="clearvalues1()">Clear Values</button>
+  </div>
+</div>
+
+<div class="conversion-container">
+  <div class="conversion-section">
+    <h1>Meters to Feet</h1>
+    <label for="meter">Meters:</label>
+    <input id="meter" type="number" oninput="updateFoot()">
+    <label for="sum2">Feet:</label>
+    <input id="sum2" type="number" readonly>
+    <button onclick="clearvalues2()">Clear Values</button>
+  </div>
+
+  <div class="conversion-section">
+    <h1>Feet to Meters</h1>
+    <label for="feet">Feet:</label>
+    <input id="feet" type="number" oninput="updateMeter()">
+    <label for="sum3">Meters:</label>
+    <input id="sum3" type="number" readonly>
+    <button onclick="clearvalues3()">Clear Values</button>
+  </div>
+</div>
+
+<script src="conversion.js"></script>
+
+</body>
+</html>

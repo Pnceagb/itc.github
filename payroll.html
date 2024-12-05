@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Payroll</title>
+    <style>
+        body {
+            background-color: #1a1e23;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .logo-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: beige;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 90%;
+            max-width: 1200px; 
+        }
+
+        .form-container {
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: center; 
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 80%; 
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #333;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #444;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 80%; 
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .table-container {
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            overflow-x: auto; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; 
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #fff;
+            text-align: center;
+            word-wrap: break-word; 
+            white-space: normal; 
+        }
+
+        th {
+            background-color: #444;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="logo-link">PNCEAGB</a>
+
+    <div class="main-container">
+
+        <div class="form-container">
+            <h1>Simple Payroll</h1>
+            <h3>Add Employee</h3>
+            <label for="employeeName">Employee Name:</label>
+            <input type="text" id="employeeName" required><br>
+            <label for="daysWorked">Days Worked:</label>
+            <input type="number" id="daysWorked" required><br>
+            <label for="dailyRate">Daily Rate:</label>
+            <input type="number" id="dailyRate" required><br>
+            <label for="deductionAmount">Deduction Amount:</label>
+            <input type="number" id="deductionAmount" required><br>
+            <button onclick="addEmployee()">Add Employee</button>
+
+            <h3>Delete Employee</h3>
+            <label for="lineNumber">Line Number to Delete:</label>
+            <input type="number" id="lineNumber" required><br>
+            <button onclick="deleteEmployee()">Delete Employee</button>
+        </div>
+
+        <div class="table-container">
+            <h2>Payroll List</h2>
+            <table id="payrollTable">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Employee Name</th>
+                        <th>Days Worked</th>
+                        <th>Daily Rate</th>
+                        <th>Gross Pay</th>
+                        <th>Deduction Amount</th>
+                        <th>Net Pay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="payroll.js"></script>
+</body>
+</html>
